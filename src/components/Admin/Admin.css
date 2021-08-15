@@ -1,0 +1,12 @@
+.admin-box{
+    height:100vh;
+    /* border: 1px solid red; */
+  }
+
+  .menu{ 
+    background-color: #fd6001;
+    color: white;
+  }
+  .list-style{
+    list-style-type: none;
+  }
