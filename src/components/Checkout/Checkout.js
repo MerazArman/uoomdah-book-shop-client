@@ -8,7 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 
@@ -52,6 +52,7 @@ const useStyles = makeStyles({
 
 const Checkout = () => {
   
+    const history = useHistory()
     const [userLogged, setUserLogged] = useContext(UserContext)
     const [addToCart, setAddToCart] = useState({});
     const {key} = useParams();
@@ -75,6 +76,7 @@ const Checkout = () => {
         .then(data => {
             console.log(data);
         })
+        history.push('/orders')
     }
     // console.log(fakeData);
 
@@ -84,7 +86,7 @@ const Checkout = () => {
     const classes = useStyles();
     return (
         <div className="container">
-            <h1>checkout done {addToCart.price} </h1>
+            <h1>checkout Process </h1>
 
             <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="spanning table">
